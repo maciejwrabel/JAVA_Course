@@ -23,5 +23,7 @@ public class User {
 
     @NonNull
     private String password;
+
+	
 }
 
