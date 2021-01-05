@@ -1,0 +1,11 @@
+/target/
+/Users/
+/bin/
+.idea
+/.classpath
+.project
+.settings/
+/002_SocialNetwork.iml
+/sql/socialnetwork.txt
+/sql/POM.xml_server_started.txt
+
