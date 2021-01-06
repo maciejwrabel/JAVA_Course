@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class UserService {
@@ -22,16 +23,16 @@ public class UserService {
     ObjectMapper objectMapper;
 
     @GetMapping("/users")
-   public ResponseEntity<String> getUsers() throws JsonProcessingException {
+   public ResponseEntity <String> getUsers() throws JsonProcessingException {
        List<User> users = userRepository.findAll();
         return ResponseEntity.ok(objectMapper.writeValueAsString(users));
    }
     
     @PostMapping("/users")
-    public ResponseEntity<User> addUser (@RequestBody User user) {
-    	 List<User> userFromDb = userRepository.findByUsername(user.getUsername());
+    public ResponseEntity <User> addUser (@RequestBody User user) {
+    	 Optional<User> userFromDb = userRepository.findByUsername(user.getUsername());
 
-         if (!userFromDb.isEmpty()) {
+         if (userFromDb.isPresent()) {
              return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).build();
          }
          
