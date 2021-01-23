@@ -1,4 +1,4 @@
-package SocialNetwork;
+package SocialNetwork.posts;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -1,4 +1,4 @@
-package SocialNetwork;
+package SocialNetwork.users;
 
 //import java.util.List;
 import java.util.Optional;

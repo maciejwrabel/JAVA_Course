@@ -1,4 +1,4 @@
-package SocialNetwork;
+package SocialNetwork.users;
 
 import lombok.*;
 
