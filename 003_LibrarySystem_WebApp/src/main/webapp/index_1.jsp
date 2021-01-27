@@ -12,7 +12,7 @@
 	<h1>MENU</h1>
 
 	<ul>
-		<li><a href="/books.jsp">List of books</a></li>
+		<li><a href="/books_1.jsp">List of books</a></li>
 		<li><a href="/strona 2">Strona 2</a></li>
 		<li><a href="/strona 3">Strona 3</a></li>
 	</ul>
