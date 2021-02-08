@@ -4,54 +4,42 @@ import java.io.Serializable;
 
 import javax.persistence.*;
 
+
 @Entity
 @Table(name = "books")
-@NamedQuery(name = "Book.findAll", query = "SELECT p FROM Book p")
+@NamedQuery(name = "Book.findAll", query = "SELECT c FROM Book c")
 public class Book implements Serializable {
+	
 	private static final long serialVersionUID = 1L;
-
+	
 	@Id
-	@SequenceGenerator(name = "BOOKS_BOOKID_GENERATOR", sequenceName = "BOOKS_SEQ", allocationSize = 1)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "BOOKS_BOOKID_GENERATOR")
-
-	@Column(name = "id")
-	private Integer id;
-
-	@Column(name = "booktitle")
-	private String booktiltle;
-
-	@Column(name = "bookauthor")
+	@Column(name = "book_id")
+	
+	private Integer book_id;
+	private String booktitle;
 	private String bookauthor;
-
-	public Book() {
+	
+	
+	public Integer getBook_id() {
+		return book_id;
 	}
-
-	public Integer getId() {
-		return id;
+	public void setBook_id(Integer book_id) {
+		this.book_id = book_id;
 	}
-
-	public void setId(Integer id) {
-		this.id = id;
+	public String getBooktitle() {
+		return booktitle;
 	}
-
-	public String getBooktiltle() {
-		return booktiltle;
+	public void setBooktitle(String booktitle) {
+		this.booktitle = booktitle;
 	}
-
-	public void setBooktiltle(String booktiltle) {
-		this.booktiltle = booktiltle;
-	}
-
 	public String getBookauthor() {
 		return bookauthor;
 	}
-
 	public void setBookauthor(String bookauthor) {
 		this.bookauthor = bookauthor;
 	}
-
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-
+	
 }
